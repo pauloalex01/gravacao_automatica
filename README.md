@@ -2,7 +2,9 @@
 
 Descrição
 ---------
-Script Python que automatiza a extração de dados de PDFs de ordens de serviço e gera a gravação das peças no formato **PN + Revisão + Serial**. O repositório contém apenas **PDFs de teste** (estrutura idêntica aos PDFs reais) para que a execução possa ser demonstrada sem expor dados da empresa.
+Script Python que automatiza a extração de dados de PDFs de ordens de serviço e gera a gravação das peças no formato desejado, futuras versões adicionaram novos formatos. O repositório contém apenas **PDFs de teste** (estrutura idêntica aos PDFs reais) para que a execução possa ser demonstrada sem expor dados da empresa.
+Os dados coletados com o pdfplumber ficam no exato formato dos pdfs de teste, mas por motivos de não vazamentos de dados, não posso mostrar os pdf's reais.
+Utilizarei como uma forma de automatizar as gravações
 
 Funcionalidade
 --------------
@@ -26,38 +28,11 @@ sudo apt install python3 python3-pip
 pip3 install -r requisitos.txt
 ```
 
-Estrutura do projeto
---------------------
-```
-gravacao-automatica/
-├─ main.py                # (seu script Python)
-├─ requisitos.txt
-├─ README.md
-├─ .gitignore
-└─ exemplos/              # PDFs de teste (NÃO incluir PDFs reais/confidenciais)
-   ├─ tubos.pdf
-   └─ ...
-```
-
 Como usar
 ---------
-1. Coloque o PDF de teste em `exemplos/` (ou ajuste a variável `arquivo`).
+1. Ajuste a variável `arquivo` com o nome do pdf em questão (Não esqueça do .pdf).
 2. Execute:
 ```bash
 python3 main.py
 ```
 3. Se o script criar `saida.txt`, o arquivo ficará na mesma pasta do script — pronto para copiar.
-
-Boas práticas / Segurança
--------------------------
-- **Não** faça upload de PDFs com dados reais da empresa. Use apenas PDFs de teste com a mesma estrutura.
-- Use repositório **privado** caso haja qualquer dúvida sobre os arquivos.
-- Adicione `__pycache__/`, `.venv/` e outros arquivos temporários no `.gitignore`.
-
-Licença
--------
-MIT (ou escolha outra de sua preferência)
-
-Contato
--------
-Seu nome / e-mail / LinkedIn
